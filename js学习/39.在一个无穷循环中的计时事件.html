@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        var c=0;
+        var t;
+        var timer_is_on=0;
+        function timedCount(){
+            document.getElementById('txt').value=c;
+            c=c+1;
+            t=setTimeout(function(){timedCount()},1000);
+        }
+        function doTimer(){
+            if(!timer_is_on)
+            {
+                timer_is_on=1;
+                timedCount();
+            }
+
+        }
+        function stopCount(){
+            clearTimeout(t);
+            timer_is_on=0;
+        }
+    </script>
+</head>
+<body>
+    <form>
+        <input type="button" value="开始计数" onclick="doTimer()">
+        <input type="text" id="txt">
+        <input type="button" value="停止计数" onclick="stopCount()">
+        </form>
+        <p>单击按钮，输入框将从0开始计数.单击停止按钮，停下计时</p>
+</body>
+</html>

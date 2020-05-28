@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>替换 "jin" 为 "my"</p>
+    <button onclick="myFunction()">点我</button>
+    <p id="demo">visit jin</p>
+    <script>
+        function myFunction(){
+            var str = document.getElementById("demo").innerHTML;
+            var tet = str.replace(/jin/i,"my");
+            document.getElementById("demo").innerHTML = tet;
+        }
+    </script>
+</body>
+</html>

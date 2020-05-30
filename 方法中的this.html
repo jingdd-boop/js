@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>实例中，<b>this</b> 指向了 <b>person</b> 对象。</p>
+    <p>因为 person 对象是 fullName 方法的所有者。</p>
+    <p id="demo"></p>
+
+    <script>
+        var person = {
+            firstName:"long",
+            lastName:"jing",
+            id :566,
+            fullName: function(){
+                return this.firstName + "" + this.lastName;
+            }
+        };
+
+        document.getElementById("demo").innerHTML = person.fullName();
+    </script>
+</body>
+</html>

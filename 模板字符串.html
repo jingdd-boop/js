@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+      //模板字符串
+
+    //   const xiaoming = {
+    //       name: '小敏',
+    //       age: 14,
+    //       say1: function() {
+    //         console.log('我叫' + this.name + '，我今年' + this.age + '岁');
+    //       },
+    //       say2: function() {
+    //         console.log(`我叫${this.name}，我今年 ${this.age} 岁`);
+    //       }
+          
+    //   } 
+
+    //   xiaoming.say1();
+    //   xiaoming.say2();
+
+    const getList = function(){
+        // ajax
+        return {
+            status: true,
+            msg: '获取成功',
+            data: [{
+                id: 1,
+                title: 'vue入门',
+                data: 'xxx'
+
+            },{
+                id: 2,
+                title: 'css入门',
+                data: 'xxs'
+                
+            },{
+                id: 3,
+                title: 'js入门',
+                data: 'xxg'
+                
+            }]
+        }
+    };
+
+    const { data: listData,status,msg} = getList();
+    
+    if(status) {
+        let arr = [];
+
+        listData.forEach(function({data, title}){
+            // 
+            arr.push(
+                `
+                <li>
+                 <span>${ title }</span>
+                 <span>${ data }</span>
+                </li>
+                `
+            )
+        });
+
+       let ul = document.createElement('ul');
+        ul.innerHTML = arr.join('');
+
+        document.body.appendChild(ul);
+    }else{
+        alert(msg);
+    }
+    </script>
+</body>
+</html>

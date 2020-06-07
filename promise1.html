@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+  
+    <script>
+          //回调
+
+    //方法 用于请求数据（模拟）
+        // function f(cb){
+        //     setTimeout(function(){
+        //         cb && cb();
+        //     },1000);
+
+        //     f(function(){
+        //         console.log(1);
+                
+        //         f(function(){
+        //             console.log(2);
+
+        //             f(function(){
+        //                 console.log(3);
+        //             });
+        //         });
+        //     });
+        // }
+
+        function f(){
+            return new Promise(resolve => {
+                setTimeout(function(){
+                    resolve();
+                },1000);
+            })
+        }
+
+        f()
+        .then(function(){
+            console.log(1);
+            return f();
+        })
+
+        .then(function(){
+            console.log(2);
+        });
+    </script>
+</body>
+</html>

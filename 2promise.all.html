@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //  promise.all()方法可以把多个promise实例，包装成一个新的promise实例
+        // promise。all([promise1,promise2]) ： promise
+
+        // 模拟需要多个请求的数据，才能进行下一步的操作的情况
+
+    //     function getData1(){
+    //         return new Promise((resovle,reject) =>{
+    //             setTimeout(() =>{
+    //                 console.log('第一条数据加载完成');
+    //                 resovle('data1');
+    //             },1000);
+    //         });
+    //         }
+    //     function getData2(){
+    //         return new Promise((resovle,reject) =>{
+    //             setTimeout(() =>{
+    //                 console.log('第二条数据加载完成');
+    //                 resovle('data2');
+    //             },1000);
+    //         });
+    //         }   
+    //     function getData3(){
+    //         return new Promise((resovle,reject) =>{
+    //             setTimeout(() =>{
+    //                 console.log('第三条数据加载完成');
+    //                 resovle('data3');
+    //             },1000);
+    //         });
+    //         }
+    //     function getData4(){
+    //         return new Promise((resovle,reject) =>{
+    //             setTimeout(() =>{
+    //                // console.log('第四条数据加载完成');
+    //                reject('data4 err');
+    //             },500);
+    //         });
+    //         }
+
+    // let p = Promise.all([]);
+
+    // // p.then(arr =>{
+    // //     console.log(arr);
+    // // }, e=>{
+    // //     console.log(e);
+    // // });
+
+    // p.then(arr =>{
+    //     console.log('arddr');
+    // }, e=>{
+    //     console.log(e);
+    // });
+
+
+        // 传统方法，不要用promise.all()
+
+        let count = 0;
+       // let err = false;
+        function fuc(){
+            if(count<4) return;
+
+            //if(err){
+
+           // }
+            console.log('已全部加载完');
+        }
+        function getData1(){
+         
+                 setTimeout(() =>{
+                     console.log('第一条数据加载完成');
+                     if(status) err = true;
+                     count++;
+                     fuc();
+                },1000);
+        }
+             
+
+        function getData2(){
+          
+            setTimeout(() =>{
+                     console.log('第一条数据加载完成');
+                     count++;
+                     fuc();
+                },1000);
+             }   
+        function getData3(){
+         
+            setTimeout(() =>{
+                     console.log('第一条数据加载完成');
+                     count++;
+                     fuc();
+                },1000);
+             }  
+        function getData4(){
+          
+            setTimeout(() =>{
+                     console.log('第一条数据加载完成');
+                     count++;
+                     fuc();
+                },1000);
+             }
+
+    getData1();
+    getData2();
+    getData3();
+    getData4();
+    </script>
+</body>
+</html>

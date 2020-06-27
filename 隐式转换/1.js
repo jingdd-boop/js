@@ -38,17 +38,30 @@
 // console.log(a == "[object Object]");
 // //原理：console.log(a.valueOf().toString());//[object Object]
 
-//一级坑
-console.log([] == 0);
-console.log(![] == 0);
+// //一级坑
+// console.log([] == 0);
+// console.log(![] == 0);
 
 //二级坑
-console.log([] == ![]);
-console.log([] == []);
+// console.log([] == ![]);
+// console.log([] == []);
 
-//三级坑
-console.log({} == !{});
-console.log({} == {});
+// //三级坑
+// console.log({} == !{});
+// console.log({} == {});
 
 
+// console.log(0.1 + 0.2 != 0.3)// true
 
+// const max = Number.MAX_SAFE_INTEGER;
+// console.log(max);//9007199254740991
+// const min = Number.MIN_SAFE_INTEGER;
+// console.log(min);//-9007199254740991
+
+// console.log(max + 1);//9007199254740992
+// console.log(max + 2);//9007199254740992
+
+console.log(BigInt(Number.MAX_SAFE_INTEGER) + 2n);//9007199254740993n
+console.log(1234567890123456789 * 123);//151851850485185200000
+
+console.log(1234567890123456789n * 123n);//151851850485185185047n

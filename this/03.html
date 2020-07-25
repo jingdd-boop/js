@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    var obj = {
+      a : 3,
+      b : 4,
+      fun : (function () {
+        var a = 5;
+        return function(){
+          alert(this.a)
+        }
+      })()
+    }
+    //一定别激动，必须看清楚函数如何被调用
+   obj.fun();
+  </script>
+</body>
+</html>

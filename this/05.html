@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  <script>
+    function Foo() {
+      function getName() {
+        alert(1);
+      }
+      return this;
+      //返回上下文，但此时this不知道指向谁
+    }
+
+    Foo.getName = function () {
+      alert(2);
+    }
+
+    foo.prototype.getName = function () {
+      alert(3);
+    }
+    var getName = function () {
+      alert(4);
+    }
+    function getName() {
+      alert(5)
+    }
+
+    getName();//排除第一个getName()因为是闭包，所以轮不上它，因此只有4,5可能
+
+    //函数先提升，变量后提升，执行函数的时候，先执行变量=4
+
+    //变量只提升定义，不提升值
+    //程序执行的时候，函数是不解析
+
+    Foo().getName();
+    //规则1：函数直接运行，上下文是window
+    //window的getName()===window.getName()答案和上一题一样 =4
+    //Foo()返回上下文
+
+    new Foo().getName()
+    //考察：原型链查找，对象能够沿着原型链，访问自己的构造函数prototype上的属性方法
+    //new的优先级非常高
+    //先执行new Foo()
+    //1、创建空白对象
+    //2、返回空白对象this
+    
+
+    new Foo.getName()
+    //new  调用一个普通函数 =2
+
+    new new Foo().getName();
+    
+    //new Foo()优先
+    //.getName()
+    //new
+    //写在原型身上的函数也不是构造函数，是普通函数
+
+  </script>
+</body>
+</html>

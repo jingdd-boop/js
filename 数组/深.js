@@ -27,3 +27,4 @@ function deepClone(o){
 var arr = [1,2,3,[44,55,88,99]];
 var arr2 = deepClone(arr);
 console.log(arr2);
+console.log(arr2[4] == arr[4]);

@@ -16,14 +16,53 @@
 //   }
 // }
 
-var value = 1;
-function foo(){
-  console.log(value);
-}
+// var value = 1;
+// function foo(){
+//   console.log(value);
+// }
 
-function bar(){
-  var value = 2;
-  foo();
-}
+// function bar(){
+//   var value = 2;
+//   foo();
+// }
 
-bar();
+// bar();
+
+
+// var nyname = '执行上下文'
+
+// var myname //声明部分
+// myname = '执行上下文' //赋值部分
+
+// function foo(){
+//   console.log('foo')
+// }
+// var bar = function(){
+//   console.log('bar')
+// }
+
+//变量提升
+// showName()
+// console.log(myname)
+// var myname = 'jingda' 
+// function showName(){   
+//   console.log('函数 showName 被执行')
+// }
+
+// var a = 2
+// function add(){
+//   var b = 10
+//   return a+b
+// }
+
+var a = 2
+function aa(a,b){
+  return b+c
+}
+function addAll(b,b){
+  var d = 10
+  result = add(b,c)
+  return a + result + d
+}
+addAll(3,6)
+

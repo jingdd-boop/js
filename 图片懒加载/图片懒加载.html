@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title></title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+            }
+            .wrap{
+                width: 800px;
+                margin: auto;
+                display: flex;
+                flex-wrap: wrap;
+            }
+            .wrap img{
+                width: 50%;
+                height: auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="wrap">
+            
+        </div>
+        
+        <script>
+            let imgs = [
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+                "https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042419&di=ddac8c48fa0c83134b1cdf3c34279b4c&imgtype=0&src=http%3A%2F%2Fa1.att.hudong.com%2F62%2F02%2F01300542526392139955025309984.jpg",
+            ];
+            
+            let wh = window.innerHeight;
+            let img = new Image();
+            img.src = 'https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042416&di=495c4d7f50fc991f0ce92a09a5bd5913&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2Frushidao%2Fpics%2Fhv1%2F20%2F108%2F1744%2F113431160.jpg';
+            img.onload = function(){    // 预置的这张图片，必须加载完才能进行下面的操作
+                renderImgArr();
+                renderRealImg();
+            }
+            
+            window.addEventListener('scroll',()=>{  // 添加监听事件
+                renderRealImg();
+            });
+            
+            function renderImgArr(){    // 渲染dom，且将所有图片的src，都先设置为  预置的图片
+                let nodelist = []
+                for(i in imgs){
+                    let tmp = `<img class='eimg' src='https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598259042416&di=495c4d7f50fc991f0ce92a09a5bd5913&imgtype=0&src=http%3A%2F%2Fimg1.gtimg.com%2Frushidao%2Fpics%2Fhv1%2F20%2F108%2F1744%2F113431160.jpg' data-src='`+ imgs[i] +`' />`;
+                    nodelist.push(tmp);
+                }
+                let _html = nodelist.join('');
+                let wrap = document.getElementsByClassName('wrap')[0];
+                wrap.innerHTML = _html;
+            }
+            
+            function renderRealImg(){   // 渲染真实图片
+                let imgNodes = g('.eimg');
+                for(let i = 0 ; i < imgNodes.length; i++){
+                    // 先检测有没有已被加载的属性
+                    if(!imgNodes[i].getAttribute('loaded')){    // 如果已经被设置成真实图片，则不必重复加载
+                        // 再检测到窗口的位置
+                        if(wh>= (imgNodes[i].offsetTop - window.pageYOffset)){ // 图片到窗口顶端的距离，小于整个窗口的高度，即这张图出现在窗口视野内。
+                            imgNodes[i].setAttribute('src',imgNodes[i].getAttribute('data-src'));
+                            imgNodes[i].setAttribute('loaded',true);
+                        }else{ // 如果此张图片没有在窗口视野内，那么这张图片之后的图片肯定也不在视野内，所以跳出循环，不必对之后的图片进行检测。
+                            break;
+                        }
+                    }
+                }
+            }
+            
+            function g(s){  // .a 或者 #a
+                // 以.开头还是以#开头
+                let method = /\./.test(s) ? 'getElementsByClassName' : 'getElementById';
+                return document[method](s.substr(1));
+            }
+        </script>
+    </body>
+</html>

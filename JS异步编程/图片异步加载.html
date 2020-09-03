@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+</head>
+<body>
+  
+</body>
+<script>
+  function loadImg(src,resolve,reject){
+    let image = new Image();
+    image.src = src;
+    image.onload = ()=>{
+      resolve(image);
+    };
+    image.onerror = reject;
+  }
+  loadImg("img/1.jpg",
+   (image)=>{
+      document.body.appendChild(image);
+    }
+  ,
+  ()=>{
+    console.log('加载失败');
+  });
+  console.log('婧婧');
+</script>
+</html>
+<!-- 实现一个加载图片的例子，我们定义了一个方法，有一个参数，并且在该方法中new了一个Image的实例
+image，将函数传递的参数赋值给该实例对象的src上 -->
+<!-- 当调用该方法时，会出现延迟，如上个例子，我们会发现，婧婧会在控制台先显示，而加载在后面 -->
+
+<!-- 在图片加载成功后中增加任务，resolve -->
+<!-- 在图片加载失败后中增加任务，reject -->
+<!-- 通过回调函数，（程序自己调）进行一步操作，先把主任务执行完，再到任务队列里找 -->

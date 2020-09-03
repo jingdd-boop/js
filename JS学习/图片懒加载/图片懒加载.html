@@ -1,0 +1,91 @@
+<!-- 1、使用自定义属性保存地址 -->
+<!-- 2、监听窗口元素滚动事件 -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <meta http-equiv="X-UA-Compatible" content="ie=edge"> 
+    <style>
+        html,body{
+            margin:0;
+            padding:0;
+        }
+        h1{
+            text-align: center;
+        }
+        .scroll-con{
+            height: 800px;
+            overflow-x: hidden;
+            overflow-y: auto;
+        }
+        .scroll-con-img{
+            width: 500px;
+            height: 400px;
+            opacity: 0;
+            margin-top:10px;
+            transform: translateX(50%);
+            transition: all 1s;
+        }
+        .fade{
+            transform: translateX(0);
+            opacity: 1;
+            transition: all 1s;
+        }
+    </style>
+</head>
+<body>
+    <h1>图片懒加载</h1>
+    <div class="scroll-con">
+        <p>
+            Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nesciunt aut voluptatem ex illum laborum cumque consequatur est eveniet molestiae sit, soluta dolorem odio sunt pariatur dolore dolorum numquam quia repellat.
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Inventore aliquam aut dolores unde quia fugiat ducimus soluta qui, iste beatae earum in eveniet illum doloremque, nulla, reiciendis natus rerum neque?
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Corporis animi culpa impedit? Adipisci dignissimos ducimus illum ea rem harum repellat ipsam, dicta nostrum totam expedita tenetur accusantium animi, excepturi deleniti?
+        </p>
+        <p>
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique, porro! Cumque fugiat aliquid dolorem provident sit consectetur incidunt hic et, repellat fuga totam dolor ipsa nobis iste asperiores aliquam placeat. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Deserunt voluptates praesentium odit, voluptatibus repellendus impedit quam vitae sunt recusandae provident debitis assumenda voluptas ipsum ullam non? Voluptatibus incidunt perferendis omnis?
+            Lorem ipsum dolor sit amet consectetur adipisicing elit. Assumenda consequatur quasi eius sapiente, inventore cumque error. Vitae quaerat voluptates totam assumenda deleniti dolor placeat quidem, sit, voluptatibus quas repellat tempore?
+        </p>
+        <img class="scroll-con-img" data-src="https://ss0.bdstatic.com/94oJfD_bAAcT8t7mm9GUKT-xh_/timg?image&quality=100&size=b4000_4000&sec=1598423992&di=31960faa4a1d1d7b8eeea5d5fb9166de&src=http://pic.90sjimg.com/back_pic/qk/back_origin_pic/00/01/90/7b96b74a0a2b615089859de45551ecc0.jpg">
+        <img class="scroll-con-img" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598434084916&di=a2b71efae89556d7b9e2d6f721ba4efe&imgtype=0&src=http%3A%2F%2Fpicture.ik123.com%2Fuploads%2Fallimg%2F170322%2F4-1F322140439.jpg">
+        <img class="scroll-con-img" data-src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1598434084914&di=fd5618d27eea1da331fac4a6847f3878&imgtype=0&src=http%3A%2F%2Fpic1.win4000.com%2Fwallpaper%2F8%2F57c3cd64aea0d.jpg">
+    </div>
+</body>
+<script>
+    const con = document.querySelector('.scroll-con')
+    const imgs = document.querySelectorAll('.scroll-con-img')
+    // con.addEventListener('scroll',()=>{
+    //     imgs.forEach(img =>{
+    //         const imgTop = img.getBoundingClientRect().top
+    //         const conTop = img.getBoundingClientRect().top
+    //         if(imgTop-conTop <= con.clientHeight){
+    //             const src = img.getAttribute('data-src')
+    //             img.setAttribute('src',src)
+    //             img.classList.add('fade')
+    //         }
+    //     })
+    // })
+
+    const options = {
+        root:con,
+        threshold:1,
+        rootMargin:'0px'
+    }
+    function lazyload(target){
+        const io = new IntersectionObserver((entries,observer)=>{
+            entries.forEach(entry=>{
+                if(entry.isIntersecting){
+                    const img = entry.target
+                    const src = img.getAttribute('data-src')
+                    img.setAttribute('src',src)
+                    img.classList.add('fade')
+                    observer.disconnect()
+                }
+            })
+        },options)
+        io.observe(target)
+    }
+    imgs.forEach(lazyload)
+</script>
+</html>
